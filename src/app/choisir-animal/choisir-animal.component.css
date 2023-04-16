@@ -1,0 +1,119 @@
+.bg-female {
+    
+    background-image: linear-gradient(rgba(255,209,220,0.95), rgba(255,209,220,0.95)), url("src/assets/bg.png");
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+    
+}
+
+.bg-male {
+    
+    background-image: linear-gradient(rgba(209,227,239,0.95), rgba(209,227,239,0.95)), url("src/assets/bg.png");
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+    
+}
+
+.title {
+    font-family: 'lovers Quarrel';
+    font-size: 5rem;
+}
+
+.bg-female .btn > div > img {
+    border: 5px solid #C348B0;
+}
+
+.female-font {
+    font-family: 'Love Ya Like A Sister';
+    font-size: 1.5rem;
+    
+}
+
+.female-add {
+    background-color: #C348B0;
+}
+
+.female-add-text {
+    color: #F3829D;
+    font-family: 'Love Ya Like A Sister';
+    font-size: 1.5rem;
+}
+
+.same-width-height {
+    aspect-ratio : 1 / 1;
+    object-fit: cover;    
+}
+
+.bg-male .btn > div > img {
+    border: 5px solid #0B6FCC;
+}
+
+.male-font {
+    font-family: 'Luckiest Guy';
+    font-size: 1.5rem;
+}
+
+.plus-font {
+    font-family: 'Luckiest Guy';
+    font-size: 2.5rem;
+}
+
+.male-add {
+    background-color: #0B6FCC;
+}
+
+.male-add-text {
+    color: #329BE8;
+    font-family: 'Love Ya Like A Sister';
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+    .big-screen{
+        min-height: 100vh;
+    }
+}
+
+#btn1 {
+    font-family: 'Love Ya Like A Sister';
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-left: -120px;
+    
+
+}
+
+.btn {
+    transition: .2s ease-in-out 0s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    
+}
+
+@media screen and (max-width: 992px) {
+    
+    .bg-male{
+        position: relative;
+    }
+    
+    #btn1 {
+        top: 0%;
+        left: 50%;
+        margin-top: -23px;
+    }
+
+    .bg-female {
+        padding-bottom: 30px;
+    }
+
+    
+}

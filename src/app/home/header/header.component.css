@@ -1,0 +1,35 @@
+* {
+    font-family: 'Love Ya Like A Sister';
+}
+
+.navbar {
+    height: 65px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.navbar-brand {
+    color: #CC0B0B;
+}
+
+.nav-link, .dropdown-menu {
+    font-size: 12px;
+}
+
+.same-width-height {
+    aspect-ratio : 1 / 1;
+    object-fit: contain;    
+}
+
+img {
+    width: 30px;
+}
+
+#owner {
+    border: 2px solid #0bcc15;
+}
+

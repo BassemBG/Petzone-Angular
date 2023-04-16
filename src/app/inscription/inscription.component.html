@@ -1,0 +1,76 @@
+
+<div class="bg min-vh-100 container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="py-3 slogan">Le Partenaire Parfait est en Attente!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-10 mx-auto px-4 pt-4 rounded-5 text-center form">
+            <form >
+                <div class="mb-3 row">
+                    <div class="col-6 ">
+                    <label for="prenom" class="form-label">Prenom</label>
+                    <input type="text" class="form-control rounded-5" id="prenom" placeholder="Entrer votre prenom ici" required> 
+                    </div>
+                    <div class="col-6">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" class="form-control rounded-5" id="nom" placeholder="Entrer votre nom ici" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="tel" class="form-label">Num tel</label>
+                        <input type="tel" pattern="[0-9]{8}" class="form-control rounded-5" id="tel" placeholder="ex. 12 345 678" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="adresse" class="form-label">Adresse</label>
+                        <input type="text" class="form-control rounded-5" id="adresse" placeholder="e.g. Ben Arous, Rades" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="dateNaissance" class="form-label">Date de naissance</label>
+                        <input type="date" class="form-control rounded-5" id="dateNaissance" placeholder="Entrer votre nom ici" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control rounded-5" id="email" placeholder="nom@exemple.com" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="mdp" class="form-label">Mot De passe</label>
+                        <input type="password" class="form-control rounded-5" id="mdp" placeholder="Entrer votre mot de passe ici" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="mdpConfirmer" class="form-label">Confirmer Mot De Passe</label>
+                        <input type="password" class="form-control rounded-5" id="mdpConfirmer" placeholder="Ré-entrer votre mot de passe ici" required>      
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <button  type="submit" [routerLink]="['/authentification']" class="btn rounded-4 "></button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>Déjà inscrit? <span> <a [routerLink]="['/authentification']">Se connecter maintenant !</a> </span></p>
+                    </div>
+                </div>
+
+                </form>
+        </div>
+    </div>
+    
+</div>
+    
+    
+
