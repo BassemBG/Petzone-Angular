@@ -123,8 +123,3 @@ img {
     color: #D66363;
 }
 
-@media screen and (max-width: 992px) {
-   #sidebar {
-    display: none;
-   }
-}

@@ -14,11 +14,7 @@
     height: fit-content;
 }
 
-@media screen and (max-width: 992px) {
-     #main {
-     margin-left: 0px;
-    }
- }
+
 
  * {
     font-family: 'Love Ya Like A Sister';
@@ -48,4 +44,15 @@ img {
 
 .btn {
     background-color: #F3829D;
+}
+
+.favoris-btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+        
 }

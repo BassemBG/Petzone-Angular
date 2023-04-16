@@ -5,7 +5,20 @@
 
 .wrapper {
     display: flex;
-    width: 100%;
     margin-top: 65px;
     
+}
+
+.margin-content {
+    margin-left: 250px;
+}
+
+@media screen and (max-width: 992px) {
+    .margin-content {
+        margin-left: 0px;
+   }
+
+   #sidebar {
+     display: none;
+    }
 }
