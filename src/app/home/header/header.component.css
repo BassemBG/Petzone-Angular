@@ -33,3 +33,6 @@ img {
     border: 2px solid #0bcc15;
 }
 
+a{
+    cursor: pointer;
+}

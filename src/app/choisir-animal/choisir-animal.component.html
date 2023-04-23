@@ -9,50 +9,26 @@
                 </div>
 
                 <div class="row p-auto">
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-3">
-                        
-                        <button class="btn p-0" [routerLink]='["/home"]'>
-                            <div class="w-100">
-                                <img src="../../assets/female-cat-1.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-white female-font">Lily</h2>
-                        </button>
-                        
-                    </div>
+                    <ng-container *ngFor="let animal of animals" >
+                        <div class="col-xl-4 col-lg-6 col-4 text-center p-3" *ngIf="animal.sexe == 'female'">
+                            <div *ngIf="gerer == true" (click)="supprimerAnimal(animal._id)" class="bg-danger rounded-5 position-absolute delete-icon text-white fs-4 ">-</div>
 
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-3">
-                        
-                        <button class="btn p-0">
-                            <div class="w-100">
-                                <img src="../../assets/female-dog-2.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-white female-font">Bella</h2>
-                        </button>
-                        
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-3" >
-                        
-                        <button class="btn p-0">
-                            <div class="w-100">
-                                <img src="../../assets/female-dog-3.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-white female-font">Lucy</h2>
-                        </button>
-                        
-                    </div>
+                            <button class="btn p-0" (click)="sendAnimalInfo(animal)">
+                                <div class="w-100">
+                                    <img [src]=" 'http://127.0.0.1:3000/getimage/' + animal.image" alt="male animal image" class="same-width-height rounded-5 img-fluid">
+                                </div>
+                                <h2 class="text-white female-font" >{{animal.name}}</h2>
+                            </button>
+                        </div>
+                    </ng-container>
 
                     <div class="col-xl-4 col-lg-6 col-4 my-auto text-center">
                         
-                        <button class="btn text-center ">
+                        <button class="btn text-center " (click)="sendAnimalSexe('female')">
                             <div class="w-50 rounded-5 plus-font text-white text-center female-add mx-auto  same-width-height">+</div>
-                            <h2 class="female-add-text">Add animal</h2>
+                            <h2 class="female-add-text" >Add animal</h2>
                         </button>
-                        
                     </div>
-                    
-
-
                 </div>
 
             </div>
@@ -64,44 +40,23 @@
                 </div>
 
                 <div class="row p-auto">
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-0 p-3">
-                        
-                        <button class="btn p-0"  >
-                            <div class="w-100">
-                                <img src="../../assets/male-dog-1.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-dark male-font">Max</h2>
-                        </button>
-                        
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-0 p-3">
-                        
-                        <button class="btn p-0">
-                            <div class="w-100">
-                                <img src="../../assets/male-dog-2.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-dark male-font">Rocky</h2>
-                        </button>
-                        
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-4 text-center p-0 p-3">
-                        
-                        <button class="btn p-0">
-                            <div class="w-100">
-                                <img src="../../assets/male-cat-3.jpg" alt="" class="same-width-height rounded-5 img-fluid">
-                            </div>
-                            <h2 class="text-dark male-font">Milo</h2>
-                        </button>
-                        
-                    </div>
+                    <ng-container *ngFor="let animal of animals">
+                        <div class="col-xl-4 col-lg-6 col-4 text-center p-0 p-3" *ngIf="animal.sexe == 'male'">
+                            <div *ngIf="gerer == true" (click)="supprimerAnimal(animal._id)" class="bg-danger rounded-5 position-absolute delete-icon text-white fs-4 ">-</div>
+                            <button class="btn p-0" (click)="sendAnimalInfo(animal)" >
+                                <div class="w-100">
+                                    <img [src]=" 'http://127.0.0.1:3000/getimage/' + animal.image" alt="female animal image" class="same-width-height rounded-5 img-fluid">
+                                </div>
+                                <h2 class="text-dark male-font">{{animal.name}}</h2>
+                            </button>
+                        </div>
+                    </ng-container>
 
                     <div class="col-xl-4 col-lg-6 col-4 my-auto text-center">
                         
-                        <button class="btn text-center ">
+                        <button class="btn text-center " (click)="sendAnimalSexe('male')">
                             <div class="w-50 rounded-5 plus-font text-white text-center male-add mx-auto my-auto same-width-height">+</div>
-                            <h2 class="male-add-text">Add animal</h2>
+                            <h2 class="male-add-text" >Add animal</h2>
                         </button>
                         
                     </div>
@@ -109,7 +64,8 @@
 
 
                 </div>
-                <button id="btn1" class="btn btn-primary px-3 fs-4">Gérer mes animaux</button>
+                <button *ngIf="gerer == false" (click)="gerer = !gerer" id="btn1" class="btn btn-primary px-3 fs-4">Gérer mes animaux</button>
+                <button *ngIf="gerer == true" (click)="gerer = !gerer" id="btn1" class="btn btn-success px-3 fs-4">Terminé</button>
             </div>
         </div>
 

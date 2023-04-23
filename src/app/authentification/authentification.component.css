@@ -1,0 +1,64 @@
+*{
+    color: white;
+    font-family: 'Love Ya Like A Sister';
+  
+  }
+  
+  .bg {
+    background-image: url("./../../assets/bg.png");
+    background-image: linear-gradient(rgba(209,227,239,0.95), rgba(209,227,239,0.95)), url("./../../assets/bg.png");
+    background-size: cover;
+    background-position: top center;
+  }
+  
+  h1 {
+    color: #F3829D;
+    text-align: center;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 80px;
+    margin-top: 70px;
+  }
+  
+  .form {
+    margin: 0 auto; 
+    background-color: #FFD1DC;
+    padding: 20px; 
+    border-radius: 25px;
+  }
+  
+  .form-label{
+    color: white;
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 20px;
+  }
+  
+  .form-control {
+    color: black;
+  }
+
+  .btn {
+    background-image: url('./../../assets/paw-btn.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 5px solid #C3DBEC;
+    width: 40px;
+    height: 40px;
+    background-color: #C3DBEC;
+      }
+  
+  p>span{
+    color: #C89E9E;
+    text-shadow: 1px 1px rgb(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  p{
+    font-family: 'Kameron';
+  }
+  
+  .form-check-label{
+    font-size: 0.9rem;
+  }
+  

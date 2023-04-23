@@ -1,0 +1,148 @@
+<div class="min-vh-100 w-100 container-fluid" [ngClass]=" { 'bg-female': sexeAnimal == 'female', 'bg-male': sexeAnimal == 'male'} ">
+
+    <div class="mb-3 row ">
+
+        <div class="form-container col-9 mx-auto ">
+
+            <div class="row text-center mb-5">
+                <div class="form-label title text-center">
+                  <label for="photo">Photo d'animal</label>
+                </div>
+
+                <div class="form-control text-center">
+                  <input (change)="selectImage( $event )" type="file" id="photo" name="photo">
+                </div>
+                
+              </div>
+
+            <div class="row p-3">
+
+                <div class="col-6">
+
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-3 text-center">
+                          <label for="nom" class="col-form-label">Nom</label>
+                        </div>
+
+                        <div class="col-9 text-center">
+                          <input [(ngModel)]="animal.name" type="text" id="nom" class="form-control" placeholder="Entrer son nom">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-3 text-center">
+                          <label for="age" class="col-form-label">Age</label>
+                        </div>
+
+                        <div class="col-7 text-center">
+                          <input [(ngModel)]="animal.age" type="number" id="age" class="form-control" placeholder="Entrer son âge">
+                        </div>
+
+                        <div class="col-2 text-center">
+                          <span>Mois</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row p-3">
+
+                <div class="col-6">
+
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-3 text-center">
+                          <label for="type" class="col-form-label">Type</label>
+                        </div>
+
+                        <div class="col-9 text-center">
+                          <select [(ngModel)]="animal.type" class="form-select">
+                            <option value="chien">chien</option>
+                            <option value="chat">chat</option>
+                          </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-3 text-center">
+                          <label for="race" class="col-form-label">Race</label>
+                        </div>
+
+                        <div class="col-9 text-center">
+                          <input [(ngModel)]="animal.race" type="text" id="race" class="form-control" placeholder="Entrer sa race">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row p-3">
+              
+              <div class="col-12 text-center">
+
+                <div class="row">
+
+                  <div class="col-6">
+                    <p>Vacciné(e)</p>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="g-3 align-items-center">
+
+                      <div class="form-check form-check-inline">
+                        <input [(ngModel)]="animal.vaccine" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="true" >
+                        <label class="form-check-label" for="inlineRadio1">oui</label>
+                      </div>
+                      
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">non</label>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              
+            </div>
+
+            <div class="row">
+
+              <div class="col-12">
+                <div class="buttons-container">
+                  <button class="back-button" (click)="goBack()"><i class="fas fa-times"></i> x</button>
+                  <button class="add-button text-white" (click)="addAnimalProfile()" [ngClass]=" { 'btn-danger': sexeAnimal == 'female', 'btn-primary': sexeAnimal == 'male'} " ><i class="fas fa-plus"></i> +</button>
+                </div>
+              </div>
+              
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,155 @@
+<!-- Main Content  -->
+<div id="main" [ngClass]=" { 'bg-female': sexeCondition == 'female', 'bg-male': sexeCondition == 'male'} ">
+    <!-- Search section  -->
+    <div id="search" class="bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 text-center py-1">
+                    <label for="descendance" class="form-label">descendance de la race</label>
+                    <input type="text" name="raceDescendance" id="descendance" class="form-control rounded-3" placeholder="Caniche Toy, royal..">
+                </div>
+                <div class="col-md-2 m-auto text-center py-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Vacciné
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Négociable
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center py-1">
+                    <label for="customRange1" class="form-label">Age</label>
+                    <div class="aligned">
+                        <input type="range" class="form-range w-75" id="customRange1">
+                        <span>mois</span>
+                    </div>
+                    
+                </div>
+                <div class="col-md-2 my-auto text-center py-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>échange</h6>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Chiots
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Argent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-md-3 text-center py-1">
+                    <label for="customRange2" class="form-label">Prix</label>
+                    <div class="aligned">
+                        <input type="range" class="form-range w-75" id="customRange2">
+                        <span>TND</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offers row" >
+       
+        <div class="col-12 text-center" *ngIf="noPubs == true" >
+            <p class="text-lead text-grey text-center fs-4" >Il n'y a pas d'offres disponibles ! Revenir plus tard !</p>
+            <img class="w-25" src="../../../../assets/sad_no_results.png" alt="">
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let pub of pubs">
+            <div class="card p-2 rounded-4 shadow mb-4" >
+                <div class="row px-4">
+                    <div class="col-12 text-muted text-end">il y a 1h</div>
+                </div>
+                <div class="row px-2">
+                    <div class="col-8 ">
+                        <div class="row">
+                            <div class="img-container text-center col-4 my-auto">
+                                <img class="offer-img rounded-circle" [src]=" 'http://127.0.0.1:3000/getimage/' + pub.animal.image " alt="">
+                            </div>
+                            <div class="my-auto col-8 info">
+                                <h3 class="title">{{pub.animal.name}},</h3>
+                                <h6>{{pub.descendanceRace}}</h6>
+                                <p>Age: <span>{{pub.animal.age}} mois</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 text-center my-auto info">
+                        <div class="row">
+                            <div class="aligned">
+
+                                <div class="img-container text-center col-2 my-auto">
+                                    <img *ngIf="pub.animal.vaccine == true"  src="../../../assets/tick-icon.png" class="offer-img rounded-circle" />
+                                    <img *ngIf="pub.animal.vaccine == false"  src="../../../assets/xNo-icon.png" class="offer-img rounded-circle" />
+                                </div>
+                                <div class="col-10">
+                                    <span>Vacciné</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="aligned">
+                                <div class="img-container text-center col-2 my-auto">
+                                    <img *ngIf="pub.negociable == true"  src="../../../assets/tick-icon.png" class="offer-img rounded-circle" />
+                                    <img *ngIf="pub.negociable == false"  src="../../../assets/xNo-icon.png" class="offer-img rounded-circle" />
+                                </div>
+                                <div class="col-10">
+                                    <span>Négociable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-text text-center pb-3">{{pub.contenue}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="text-success my-auto">{{pub.typeEchange}}</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-9 text-center">
+                                    <button (click)="consulterDetails( pub._id )" class="btn btn-sm text-white shadow rounded-3" [ngClass]=" { 'btn-female': sexeCondition == 'female', 'btn-male': sexeCondition == 'male'} " >Consulter</button>
+                                </div>
+                                <div class="col-3">
+                                    <button (click)="ajouterFavoris( pub._id )" class="img-container text-center my-auto favoris-btn">
+                                        <img src="../../../assets/favoris-img.png" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    

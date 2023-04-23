@@ -1,0 +1,21 @@
+.custom-height {
+    height: 150px;
+    font-size: 18px;
+  }
+
+  *{
+  color: black;
+  font-family: 'Love Ya Like A Sister';
+}
+
+form{
+    margin-top: 50px;
+}
+
+.bg-female{
+    background-color: #FFE2E9;
+}
+
+.bg-male {
+    background-color: #D1E3EF;
+}

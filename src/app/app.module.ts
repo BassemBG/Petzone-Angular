@@ -12,6 +12,13 @@ import { HeaderComponent } from './home/header/header.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { ContentSectionComponent } from './home/content-section/content-section.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AjoutAnimalComponent } from './ajout-animal/ajout-animal.component';
+import { ConsulterDetailsPubComponent } from './home/content-section/consulter-details-pub/consulter-details-pub.component';
+import { ConsulterPubsComponent } from './home/content-section/consulter-pubs/consulter-pubs.component';
+import { ConsulterFavorisComponent } from './home/content-section/consulter-favoris/consulter-favoris.component';
+import { AjouterPubComponent } from './home/content-section/ajouter-pub/ajouter-pub.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +29,19 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     SidebarComponent,
     ContentSectionComponent,
-    HomeComponent
+    HomeComponent,
+    AjoutAnimalComponent,
+    ConsulterDetailsPubComponent,
+    ConsulterPubsComponent,
+    ConsulterFavorisComponent,
+    AjouterPubComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

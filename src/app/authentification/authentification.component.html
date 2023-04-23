@@ -1,1 +1,55 @@
-<p>aaaaaaaaaa</p>
+<div class="bg min-vh-100 w-100 container-fluid">
+
+    <div class="mb-3 row">
+        <div class="col-12">
+            <h1>Ravis De Vous Revoir!</h1>
+        </div>
+    </div>
+
+    <div class="mb-3 row ">
+        <div class="col-lg-8 mx-auto">
+            <div class="form">
+
+                <div class="mb-3 row">
+                    <div class="col-12 text-center">
+                        <label for="email" class="form-label">Votre Email</label>
+                        <input [(ngModel)]="user.email" type="email" placeholder="exemple@exemple.com" class="form-control rounded-5" id="email" aria-describedby="emailHelp" required>
+                    </div>
+                </div>
+
+                <div class="mb-1 row">
+                    <div class="col-12 text-center">
+                        <label for="pwd" class="form-label">Votre mot de passe</label>
+                        <input [(ngModel)]="user.password" type="password" placeholder="ExemplE1234" class="form-control rounded-5" id="pwd" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 form-check row">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="checkbox" class="form-check-input" id="chk">
+                            <label class="form-check-label" for="chk">Rester connecté</label>
+                        </div>
+                        <div class="col-6">
+                            <label for="oublier-mdp" style="display: inline-block; text-align: right; width: 100%;">Mot de passe oublié</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn rounded-4" (click)="login()" ></button>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-12 text-center">
+                        <p>Pas un membre? <span [routerLink]="['/inscription']" >Rejoignez-nous maintenant!</span></p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</div>

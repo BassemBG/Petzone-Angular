@@ -1,0 +1,78 @@
+<div class="min-vh-100 w-100 container-fluid text-center" [ngClass]=" { 'bg-female': sexeCondition == 'female', 'bg-male': sexeCondition == 'male'} " >
+
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+
+          <div>
+
+            <div class="mb-3 row">
+
+                  <div class="col-12 text-center">
+                    <label for="type" class="col-form-label">Quel est le type d'échange?</label>
+                    <select [(ngModel)]="pub.typeEchange" id="type" class="form-select">
+                      <option value="argent">Argent</option>
+                      <option value="chiot">chiots</option>
+                    </select>
+                  </div>
+    
+            </div>
+    
+    
+            <div class="mb-3 row">
+    
+                <div class="col-12">
+    
+                    <label for="negociation" class="form-label">Etes-vous prêt à négocier?</label>
+
+                    <div class="row"></div>
+
+                            <div class="form-check form-check-inline">
+                                <input [(ngModel)]="pub.negociable" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true">
+                                <label class="form-check-label" for="flexRadioDefault1">Oui</label>
+                            </div>
+        
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Non</label>
+                              </div>
+
+                </div>
+                
+            </div>
+
+            <div class="mb-3 row">
+    
+                <div class="col-12">
+                    <label for="description" class="form-label">Quelle est la descendance en detail de votre race "{{loggedInAnimal.race}}" </label>
+                    <input [(ngModel)]="pub.descendanceRace" class="form-control text-dark">
+                </div>
+                
+            </div>
+    
+            <div class="mb-3 row">
+    
+                <div class="col-12">
+                    <label for="description" class="form-label">Decrire votre animal ci-dessous</label>
+                    <textarea [(ngModel)]="pub.contenue" name="centenue" id="description" cols="30" rows="10" class="form-control text-dark" placeholder="Je cherche un partenaire mignon pour faire connaisance! Est-ce que quelqu'un cherche un {{loggedInAnimal.race}} ? Je suis le plus mignon que vous puissiez trouver."></textarea>
+                </div>
+                
+            </div>
+
+            <div class="mb-3 row text-center">
+
+                <div class="col-md-8">
+                    <p>NB: L'âge, la race et le statut de vaccination sont automatiquement ajoutés </p>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-end align-items-center"></div>
+                <button (click)="ajoutPub()" type="submit" class="btn" [ngClass]=" { 'btn-danger': sexeCondition == 'female', 'btn-primary': sexeCondition == 'male'} ">Post</button>
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</div>

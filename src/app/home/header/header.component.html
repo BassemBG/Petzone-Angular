@@ -11,13 +11,10 @@
                 <div>
                     <img id="owner" src="../../../assets/owner-img.png" alt="" class="same-width-height rounded-circle img-fluid">
                 </div>
-                Bassem
+                {{ dataUser.firstName }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Mes animaux</a></li>
               <li><a class="dropdown-item" href="#">Paramètres</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
 
@@ -31,7 +28,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-center text-dark" [routerLink]='["/inscription"]'>
+            <a class="nav-link text-center text-dark" (click) = "logOut()">
                 <div>
                     <img src="../../../assets/disconnect-img.png" alt="" class="same-width-height rounded-circle img-fluid">
                 </div>

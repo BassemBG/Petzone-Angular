@@ -1,0 +1,168 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col-4">
+            <img [src]=" 'http://127.0.0.1:3000/getimage/' + detailsPub.animal.image " alt="Photo pricipale" class="photo2">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12 offset-3">
+                    <h6>Nom: {{detailsPub.animal.name}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 offset-3">
+                    <h6>Age: {{detailsPub.animal.age}} mois</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi1 bi-emoji-smile-fill" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zM4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8z"/>
+                              </svg>
+                       </div>   
+                       <div class="col-6">
+                        <h5> {{detailsPub.animal.nbrAvisSatisfait}} </h5>
+                       </div>
+                    </div>   
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi2 bi-emoji-expressionless-fill" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM4.5 6h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm5 0h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm-5 4h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1z"/>
+                            </svg>
+                       </div>   
+                       <div class="col-6">
+                        <h5>{{detailsPub.animal.nbrAvisNeutre}}</h5>
+                       </div>
+                    </div>       
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi3 bi-emoji-angry-fill" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM4.053 4.276a.5.5 0 0 1 .67-.223l2 1a.5.5 0 0 1 .166.76c.071.206.111.44.111.687C7 7.328 6.552 8 6 8s-1-.672-1-1.5c0-.408.109-.778.285-1.049l-1.009-.504a.5.5 0 0 1-.223-.67zm.232 8.157a.5.5 0 0 1-.183-.683A4.498 4.498 0 0 1 8 9.5a4.5 4.5 0 0 1 3.898 2.25.5.5 0 1 1-.866.5A3.498 3.498 0 0 0 8 10.5a3.498 3.498 0 0 0-3.032 1.75.5.5 0 0 1-.683.183zM10 8c-.552 0-1-.672-1-1.5 0-.247.04-.48.11-.686a.502.502 0 0 1 .166-.761l2-1a.5.5 0 1 1 .448.894l-1.009.504c.176.27.285.64.285 1.049 0 .828-.448 1.5-1 1.5z"/>
+                              </svg>
+                       </div>   
+                       <div class="col-6">
+                        <h5>{{detailsPub.animal.nbrAvisFache}}</h5>
+                       </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-danger">Details race et santé</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <div class="case1">
+                        <h5>race: {{detailsPub.animal.race}} </h5>
+                      </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="case2">
+                        <h5>Descendance de la race: {{detailsPub.descendanceRace}} </h5>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="case3">
+                        <img *ngIf="detailsPub.animal.vaccine == true"  src="../../../assets/tick-icon.png" class="offer-img rounded-circle" />
+                        <img *ngIf="detailsPub.animal.vaccine == false"  src="../../../assets/xNo-icon.png" class="offer-img rounded-circle" />
+                     <h5>vaccine</h5>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-danger">Details d'échange</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <div class="case1">
+                        <h5>Type d'echange : {{detailsPub.typeEchange}} </h5>
+                      </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="case2">
+                        <img *ngIf="detailsPub.negociable == true"  src="../../../assets/tick-icon.png" class="offer-img rounded-circle" />
+                        <img *ngIf="detailsPub.negociable == false"  src="../../../assets/xNo-icon.png" class="offer-img rounded-circle" />
+                        <h5>negociable</h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-danger">Détails proprietaire</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <div class="case1">
+                        <h5>Prénom propriétaire: {{detailsPub.owner.firstName}}</h5>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="case2">
+                        <h5>Nom propriétaire: {{detailsPub.owner.lastName}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <div class="case3">
+                        <h5>numero de telephone : {{detailsPub.owner.numTel}} </h5>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="case4">
+                        <h5>Adresse : {{detailsPub.owner.address}} </h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <hr>
+    <div class="row my-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-danger">Contenue de la publication</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-lead fs-2"> {{detailsPub.contenue}} </p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+

@@ -52,10 +52,10 @@ p {
 
 }
 
-p>span>a {
+p>span {
     color: #C89E9E;
     text-shadow: 1px 1px 1px #8d2626;
-    text-decoration: none;
+    cursor: pointer;
 }
 
 input {

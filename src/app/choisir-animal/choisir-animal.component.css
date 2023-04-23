@@ -90,11 +90,16 @@
 
 }
 
-.btn {
+
+
+.delete-icon {
+    width: 30px;
     transition: .2s ease-in-out 0s;
+    position: absolute;
+    cursor: pointer;
 }
 
-.btn:hover {
+.delete-icon:hover {
     transform: scale(1.1);
     
 }

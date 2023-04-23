@@ -1,21 +1,21 @@
 
 <!-- Sidebar  -->
-<nav id="sidebar">
+<nav id="sidebar" [ngClass]=" { 'bg-female': sexeCondition == 'female', 'bg-male': sexeCondition == 'male'} ">
     <div class="sidebarHeader text-center">
-        <a href="" class="">
+        <a class="">
             <div class="mb-2">
-                <img id="main-animal-img" src="../../../assets/female-dog-3.jpg" alt="" class="text-center rounded-circle img-fluid">            
+                <img id="main-animal-img" [src]=" 'http://127.0.0.1:3000/getimage/' + loggedInAnimal.image " alt="" class="text-center rounded-circle img-fluid">            
             </div>
-            <h5 class="mb-4 title" >Lucy's profile</h5>
+            <h5 class="mb-4" [ngClass]=" { 'title-female': sexeCondition == 'female', 'title-male': sexeCondition == 'male'} " >{{loggedInAnimal.name}}'s profile</h5>
         </a>
 
-        <button class="btn btn-danger rounded-pill px-5 " id="btn-post">POST</button>
+        <button [routerLink]='["/home/content-section/ajouter-pub"]'   class="btn rounded-pill px-5 " id="btn-post" [ngClass]=" { 'btn-danger': sexeCondition == 'female', 'btn-primary': sexeCondition == 'male'} ">POST</button>
         
     </div>
     <div class="sidebarContent">
         <ul class="list-unstyled main-components">
             <li >
-                <a href="#" >
+                <a [routerLink]='["/home/content-section/consulter-favoris"]' >
                     <div class="aligned">
                         <img  src="../../../assets/favoris-img.png" alt="">
                         <span>Favoris</span>
@@ -28,7 +28,7 @@
                     <div class="aligned">
                         <img src="../../../assets/settings-icon.png" alt="">
                         <span>Paramètres d'animal</span>
-                    </div>
+                    </div>  
                 </a>
             </li>
 

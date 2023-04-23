@@ -7,44 +7,44 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-sm-10 mx-auto px-4 pt-4 rounded-5 text-center form">
-            <form >
+            <div >
                 <div class="mb-3 row">
                     <div class="col-6 ">
                     <label for="prenom" class="form-label">Prenom</label>
-                    <input type="text" class="form-control rounded-5" id="prenom" placeholder="Entrer votre prenom ici" required> 
+                    <input [(ngModel)]="user.firstName" type="text" class="form-control rounded-5" id="prenom" placeholder="Entrer votre prenom ici" required> 
                     </div>
                     <div class="col-6">
                     <label for="nom" class="form-label">Nom</label>
-                    <input type="text" class="form-control rounded-5" id="nom" placeholder="Entrer votre nom ici" required>
+                    <input [(ngModel)]="user.lastName" type="text" class="form-control rounded-5" id="nom" placeholder="Entrer votre nom ici" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="tel" class="form-label">Num tel</label>
-                        <input type="tel" pattern="[0-9]{8}" class="form-control rounded-5" id="tel" placeholder="ex. 12 345 678" required>
+                        <input [(ngModel)]="user.numTel" type="tel" pattern="[0-9]{8}" class="form-control rounded-5" id="tel" placeholder="ex. 12 345 678" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="adresse" class="form-label">Adresse</label>
-                        <input type="text" class="form-control rounded-5" id="adresse" placeholder="e.g. Ben Arous, Rades" required>
+                        <input [(ngModel)]="user.address" type="text" class="form-control rounded-5" id="adresse" placeholder="e.g. Ben Arous, Rades" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="dateNaissance" class="form-label">Date de naissance</label>
-                        <input type="date" class="form-control rounded-5" id="dateNaissance" placeholder="Entrer votre nom ici" required>
+                        <input [(ngModel)]="user.dateBirth" type="date" class="form-control rounded-5" id="dateNaissance" placeholder="Entrer votre nom ici" required>
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-12">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control rounded-5" id="email" placeholder="nom@exemple.com" required>
+                        <input [(ngModel)]="user.email" type="email" class="form-control rounded-5" id="email" placeholder="nom@exemple.com" required>
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-12">
                         <label for="mdp" class="form-label">Mot De passe</label>
-                        <input type="password" class="form-control rounded-5" id="mdp" placeholder="Entrer votre mot de passe ici" required>
+                        <input [(ngModel)]="user.password" type="password" class="form-control rounded-5" id="mdp" placeholder="Entrer votre mot de passe ici" required>
                     </div>
                 </div>
 
@@ -54,19 +54,20 @@
                         <input type="password" class="form-control rounded-5" id="mdpConfirmer" placeholder="Ré-entrer votre mot de passe ici" required>      
                     </div>
                 </div>
+                
                 <div class="row mb-3">
                     <div class="col-12">
-                        <button  type="submit" [routerLink]="['/authentification']" class="btn rounded-4 "></button>
+                        <button  type="submit" (click)="create()" class="btn rounded-4 "></button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p>Déjà inscrit? <span> <a [routerLink]="['/authentification']">Se connecter maintenant !</a> </span></p>
+                        <p>Déjà inscrit? <span [routerLink]="['/authentification']">Se connecter maintenant !</span></p>
                     </div>
                 </div>
 
-                </form>
+            </div>
         </div>
     </div>
     

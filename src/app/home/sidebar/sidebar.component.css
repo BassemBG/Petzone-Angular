@@ -27,9 +27,16 @@ a:focus {
     top:65;
     left:0;
     height: 100vh;
-    background: #F5B3B3;
     color: #fff;
     transition: all 0.3s;
+}
+
+.bg-female {
+    background: #F5B3B3;
+}
+
+.bg-male {
+    background: #5BA3E6;
 }
 
 #sidebar .active {
@@ -42,7 +49,7 @@ a:focus {
 
 #sidebar ul.main-components {
     padding: 0px 0px 20px 0px;
-    border-bottom: 3px solid #ef8888;
+    border-bottom: 3px solid white;
 }
 
 #sidebar ul p {
@@ -119,7 +126,10 @@ img {
     font-size: 1em;
 }
 
-.title {
+.title-female {
     color: #D66363;
+}
+.title-male {
+    color: black;
 }
 
